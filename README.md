@@ -33,6 +33,7 @@ Eyeballing cutoff points in the list of puzzles sorted by frequency is not my id
 - The word list used in the program is not complete. For example, I needed to manually add "etiquette" and a few other fairly common words.
 - I chose the name "Shattered Corpus" to describe the sense of picking through a pile of broken words the player gets as they navigate the menus and solve the puzzles. However I am very open to suggestions for alternatives.
 - I am also open to suggestions about the icon for the app. I do not do graphic design and this was my first idea.
+- I did some semi-manual work on the word and keys lists to remove things like three letter words and place names, but those files are not included.
 
 
 ## Files in the repository
@@ -51,8 +52,8 @@ The files for each difficulty level containing the list of puzzles, their relati
 This file contains a Python dictionary which stores which keys for each difficulty have been completed and which difficulty levels have been completed entirely.
 
 ### get_word_counts.py
-The Python script used to query English word frequency data from ngrams.dev with words from `word_list.txt`. It outputs the file called
+The Python script used to query English word frequency data from ngrams.dev with words from `word_list.txt`. It outputs the file `word_counts.txt`
 
 ### words_to_keys_counts.py
-The Python script taking the `word_counts.txt` list and making the list of keys sorted by their relative frequency `keys_counts_sorted.txt`. The ouput file contains the 
+The Python script taking the `word_counts.txt` list and making the list of keys sorted by their relative frequency `keys_counts_sorted.txt`. The ouput file contains the keys, the number of times each shows up in the ngrams corpus, and the most commonly appearing solution.
 
