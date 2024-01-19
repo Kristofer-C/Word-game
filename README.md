@@ -31,9 +31,12 @@ Eyeballing cutoff points in the list of puzzles sorted by frequency is not my id
 
 - The posted distribution only works on Windows.
 - The word list used in the program is not complete. For example, I needed to manually add "etiquette" and a few other fairly common words.
+- I chose the name "Shattered Corpus" to describe the sense of picking through a pile of broken words the player gets as they navigate the menus and solve the puzzles. However I am very open to suggestions for alternatives.
+- I am also open to suggestions about the icon for the app. I do not do graphic design and this was my first idea.
 
 
-## Files
+## Files in the repository
+The ones that need any explanation, anyway.
 
 ### word_game.py
 This is the Python script containing all the code to run the game.
@@ -41,11 +44,15 @@ This is the Python script containing all the code to run the game.
 #### \game data
 The directory containing the `.txt` files that are accessed and/or written to during play.
 ##### `word_list.txt`
-
+The list of English words with which word frequency data was queried and which is used as the list of acceptable English words when checking the player's guesses. This word list is a concatenation of `CROSSWD.TXT` and `CRSWD-D.TXT` taken from [Moby Word Lists](https://archive.org/details/mobywordlists03201gut). According to the authors, these files make up the words accepted in games like Scrabble and crossword puzzles. These lists are particularly useful for this project as they contain every form of the word as separate entries, e.g. "extract, extracts, extracted, extracting."
+##### `key_*.txt`
+The files for each difficulty level containing the list of puzzles, their relative frequency, and associated solutions.
+##### `save_data.txt`
+This file contains a Python dictionary which stores which keys for each difficulty have been completed and which difficulty levels have been completed entirely.
 
 ### get_word_counts.py
 The Python script used to query English word frequency data from ngrams.dev with words from `word_list.txt`. It outputs the file called
 
 ### words_to_keys_counts.py
-The Python script that 
+The Python script taking the `word_counts.txt` list and making the list of keys sorted by their relative frequency `keys_counts_sorted.txt`. The ouput file contains the 
 
